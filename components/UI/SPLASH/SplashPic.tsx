@@ -1,9 +1,20 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import Colors from "@/constants/Colors";
-
+import { useEffect } from "react";
+import { useRouter } from "expo-router";
 
 export default function SplashPic() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.replace("/(authenticated)/(tabs)/home");
+    }, 7000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />

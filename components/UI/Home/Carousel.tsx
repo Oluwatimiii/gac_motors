@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import MainText from "../Custom/MainText";
 import CarouselComponent from "./CarouselComponent";
-import { cars } from "@/data/data";
+import { details } from "@/data/data";
 import { responsiveHeight, responsiveWidth } from "react-native-responsive-dimensions";
   
 
@@ -23,19 +23,19 @@ const Carousel = () => {
       <View>
         <MainText text="Find Your Ideal Ride" />
 
-        <CarouselComponent data={cars} />
+        <CarouselComponent data={details} />
       </View>
 
       <View>
         <MainText text="Top Deals" />
 
-        <CarouselComponent data={shuffleArray(cars)} />
+        <CarouselComponent data={shuffleArray(details)} />
       </View>
 
       <View>
         <MainText text="Latest Fleets" />
 
-        <CarouselComponent data={shuffleArray(cars)} />
+        <CarouselComponent data={shuffleArray(details)} />
       </View>
     </View>
   );

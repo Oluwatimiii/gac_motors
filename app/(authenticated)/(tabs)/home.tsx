@@ -7,10 +7,14 @@ import { Ionicons } from "@expo/vector-icons";
 import CustomHeader from "@/components/UI/Custom/CustomHeader";
 import Carousel from "@/components/UI/Home/Carousel";
 import { StatusBar } from "react-native";
+import { useUserStore } from "@/store/motorStore";
 
 const Page = () => {
   const { top } = useSafeAreaInsets();
   const paddingTop = top > 0 ? top + 5 : 30;
+ 
+  const user = useUserStore((state) => state.user)
+  console.log("current user from home", user)
 
   return (
     <View style={{ flex: 1, paddingTop }}>
@@ -27,7 +31,7 @@ const Page = () => {
       >
         {/* Text and location */}
         <View style={styles.container}>
-          <Text style={styles.greeting}>Hello, Moyinoluwa</Text>
+          <Text style={styles.greeting}>Hello, {user?.name}</Text>
 
           <View style={styles.locationBox}>
             <Ionicons
@@ -35,7 +39,7 @@ const Page = () => {
               size={18}
               color={Colors.primary}
             />
-            <Text>Plot 3, uncle sege - yaba, Lagos.</Text>
+            <Text>{ user?.address ? user?.address : "No address set yet. Visit profile to set." }</Text>
           </View>
         </View>
 

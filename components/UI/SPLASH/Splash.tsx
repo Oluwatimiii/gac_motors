@@ -1,28 +1,8 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { useEffect, useState } from "react";
 import Colors from "@/constants/Colors";
-import { Href, useRouter } from "expo-router";
 
-
-interface SplashProps {
-  url: string;
-}
-
-export default function Splash({ url }: SplashProps) {
-  const [onboard, setOnboard] = useState(null);
-  const router = useRouter()
-   
-  //Get users details and check if user has clicked on onboarded
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      router.push(url as Href);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, [url, router]);
-
+export default function Splash() {
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
@@ -30,7 +10,7 @@ export default function Splash({ url }: SplashProps) {
       <View style={styles.logoBox}>
         <Image
           style={styles.logoImage}
-          source={require("../../assets/images/gaclogo.png")}
+          source={require("../../../assets/images/gaclogo.png")}
         />
 
         <View>

@@ -9,21 +9,25 @@ import {
   View,
 } from "react-native";
 import React, { useState } from "react";
-import { Car } from "@/data/data";
+import { Car, Details } from "@/data/data";
 import {
   responsiveHeight,
   responsiveWidth,
 } from "react-native-responsive-dimensions";
 import Colors from "@/constants/Colors";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
+import { Href } from "expo-router";
+import { useRouter } from "expo-router";
 
 interface CarouselComponentProps {
-  data: Car[];
+  data: Details[];
 }
 
 const CarouselComponent: React.FC<CarouselComponentProps> = ({ data }) => {
-  const handlePress = (name: string) => {
-    console.log("card clicked", name);
+  const router = useRouter();  
+
+  const handlePress = (id: number) => {
+    router.push(`(authenticated)/vehicle/${id}` as Href);
   };
 
   const [favorites, setFavorites] = useState<{ [key: number]: boolean }>({});
@@ -31,7 +35,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = ({ data }) => {
   const toggleFavorite = (id: number) => {
     setFavorites((prevFavorites) => ({
       ...prevFavorites,
-      [id]: !prevFavorites[id], // Toggle the favorite status
+      [id]: !prevFavorites[id],
     }));
   };
 
@@ -44,9 +48,9 @@ const CarouselComponent: React.FC<CarouselComponentProps> = ({ data }) => {
       {data.map((item) => {
         const isFavorite = favorites[item.id];
         return (
-          <TouchableWithoutFeedback
+          <TouchableWithoutFeedback            
             key={item.id}
-            onPress={() => handlePress(item.name)}
+            onPress={() => handlePress(item.id)}
           >
             <View style={styles.cardContainer}>
               <TouchableOpacity
@@ -68,7 +72,7 @@ const CarouselComponent: React.FC<CarouselComponentProps> = ({ data }) => {
 
               <View style={styles.descriptionContainer}>
                 <Text style={styles.carName}>{item.name}</Text>
-                <Text style={styles.carPrice}>&#8358;{item.price}m</Text>
+                <Text style={styles.carPrice}>&#8358;{item.price.toLocaleString()} per wk</Text>
               </View>
             </View>
           </TouchableWithoutFeedback>

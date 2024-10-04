@@ -5,6 +5,29 @@ export interface Car {
   image: any;
 }
 
+export interface Details {
+  id: number;
+  name: string;
+  price: number;
+  image: any;
+  type: string;
+  tag: string;
+  specs: {
+    spec1: string;
+    spec2: string;
+    spec3: string;
+    spec4: string;
+    spec5: string;
+    spec6: string;
+  };
+  moreSpecs: {
+    spec1: string;
+    spec2: string;
+    spec3: string;
+    spec4: string;
+  };
+}
+
 export interface OnboardingType {
   id: number;
   title: string;
@@ -49,6 +72,140 @@ export const cars: Car[] = [
     name: "Gac Lofer",
     price: 2.5,
     image: require("../assets/images/lofer.png"),
+  },
+];
+export const details: Details[] = [
+  {
+    id: 1,
+    name: "Gm8 Ivory White",
+    price: 3000000,
+    image: require("../assets/images/gm8ivory.png"),
+    type: "Fuel",
+    tag: "Ivory White luxury",
+    specs: {
+      spec1: "3.0L V6",
+      spec2: "8-Speed",
+      spec3: "0-60 mph",
+      spec4: "22/28 mpg",
+      spec5: "0-60 mph",
+      spec6: "22/28 mpg"
+    },
+    moreSpecs: {
+      spec1: "7 passengers",
+      spec2: "25.5 cubic feet",
+      spec3: "5-star rating",
+      spec4: "12.3 vol"
+    }
+  },
+  {
+    id: 2,
+    name: "Ga4 Sedan",
+    price: 2500000,
+    image: require("../assets/images/ga4sedan.png"),
+    type: "Fuel",
+    tag: "comfort sedan",
+    specs: {
+      spec1: "3.0L V6",
+      spec2: "8-Speed",
+      spec3: "0-60 mph",
+      spec4: "22/28 mpg",
+      spec5: "0-60 mph",
+      spec6: "22/28 mpg",
+    },
+    moreSpecs: {
+      spec1: "7 passengers",
+      spec2: "25.5 cubic feet",
+      spec3: "5-star rating",
+      spec4: "12.3 vol"
+    }
+  },
+  {
+    id: 3,
+    name: "Gs4 Gold",
+    price: 1700000,
+    image: require("../assets/images/gs4gold.png"),
+    type: "Fuel and gas",
+    tag: "Golden luxury",
+    specs: {
+      spec1: "3.0L V6",
+      spec2: "8-Speed",
+      spec3: "0-60 mph",
+      spec4: "22/28 mpg",
+      spec5: "0-60 mph",
+      spec6: "22/28 mpg"
+    },
+    moreSpecs: {
+      spec1: "7 passengers",
+      spec2: "25.5 cubic feet",
+      spec3: "5-star rating",
+      spec4: "12.3 vol"
+    }
+  },
+  {
+    id: 4,
+    name: "All New Gs8",
+    price: 3500000,
+    image: require("../assets/images/gs8new.png"),
+    type: "Fuel",
+    tag: "Seal teal green goddess",
+    specs: {
+      spec1: "3.0L V6",
+      spec2: "8-Speed",
+      spec3: "0-60 mph",
+      spec4: "22/28 mpg",
+      spec5: "0-60 mph",
+      spec6: "22/28 mpg"
+    },
+    moreSpecs: {
+      spec1: "7 passengers",
+      spec2: "25.5 cubic feet",
+      spec3: "5-star rating",
+      spec4: "12.3 vol"
+    }
+  },
+  {
+    id: 5,
+    name: "Gs8 Moonlight Grey",
+    price: 2500000,
+    image: require("../assets/images/gs8moon.png"),
+    type: "Fuel",
+    tag: "moonlight grey radiance",
+    specs: {
+      spec1: "3.0L V6",
+      spec2: "8-Speed",
+      spec3: "0-60 mph",
+      spec4: "22/28 mpg",
+      spec5: "0-60 mph",
+      spec6: "22/28 mpg"
+    },
+    moreSpecs: {
+      spec1: "7 passengers",
+      spec2: "25.5 cubic feet",
+      spec3: "5-star rating",
+      spec4: "12.3 vol"
+    }
+  },
+  {
+    id: 6,
+    name: "Gac Lofer",
+    price: 1500000,
+    image: require("../assets/images/lofer.png"),
+    type: "Fuel",
+    tag: "Solid lofer vehicle",
+    specs: {
+      spec1: "3.0L V6",
+      spec2: "8-Speed",
+      spec3: "0-60 mph",
+      spec4: "22/28 mpg",
+      spec5: "0-60 mph",
+      spec6: "22/28 mpg"
+    },
+    moreSpecs: {
+      spec1: "7 passengers",
+      spec2: "25.5 cubic feet",
+      spec3: "5-star rating",
+      spec4: "12.3 vol"
+    }
   },
 ];
 

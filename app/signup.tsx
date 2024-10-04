@@ -31,7 +31,7 @@ const SignUp = () => {
   const [checkBox, setCheckBox] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [phone, setPhone] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [name, setName] = useState("");
   const [showErrors, setShowErrors] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
@@ -65,7 +65,7 @@ const SignUp = () => {
         let trimName = name.trim()
         let trimEmail = email.trim()
         let trimPassword = password.trim()
-        let trimNumber = phone.trim()
+        let trimNumber = phoneNumber.trim()
 
         setLoading(true);
         console.log("signing up", trimEmail)
@@ -76,6 +76,7 @@ const SignUp = () => {
           options: {
             data: {
               name,
+              email,
             },
           }
         })
@@ -121,8 +122,8 @@ const SignUp = () => {
               <Text style={styles.userNameText}>Phone number</Text>
               <TextInput
                 style={styles.userNameInput}
-                value={phone}
-                onChangeText={(text) => setPhone(text)}
+                value={phoneNumber}
+                onChangeText={(text) => setPhoneNumber(text)}
                 placeholder="Input phone no.."
                 placeholderTextColor={Colors.gray}
                 keyboardType="name-phone-pad"

@@ -11,14 +11,11 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
-  KeyboardAvoidingView,
   Platform,
   Alert,
   ActivityIndicator,
-  TouchableWithoutFeedback,
   ScrollView,
 } from "react-native";
-import { responsiveWidth } from "react-native-responsive-dimensions";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 interface Errors {
@@ -27,7 +24,6 @@ interface Errors {
 }
 
 const Page = () => {
-  const keyboardVerticalOffset = Platform.OS === "ios" ? 80 : 0;
   const router = useRouter();
 
   const [toogleBtn, setToogleBtn] = useState(true);
