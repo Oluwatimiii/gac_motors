@@ -1,10 +1,7 @@
 import { Image, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
 import { details, Details } from "@/data/data";
-import {
-  responsiveHeight,
-  responsiveWidth,
-} from "react-native-responsive-dimensions";
+import { responsiveHeight } from "react-native-responsive-dimensions";
 import { LinearGradient } from "expo-linear-gradient";
 import MainText from "../Custom/MainText";
 import Colors from "@/constants/Colors";
@@ -15,7 +12,7 @@ interface CustomDetailsBoxProps {
 
 const DetailsBox: React.FC<CustomDetailsBoxProps> = ({ id }) => {
   const vehicleDetails: Details | undefined = details.find(
-    (item) => item.id === parseInt(id)
+    (item) => item.id === id
   );
 
   return (

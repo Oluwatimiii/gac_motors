@@ -12,7 +12,7 @@ interface CustomDetailsHeaderProps {
 
 const CustomDetailsHeader: React.FC<CustomDetailsHeaderProps> = ({ id }) => {
   const router = useRouter()
-  const vehicleDetails: Details | undefined = details.find(item => item.id === parseInt(id))
+  const vehicleDetails: Details | undefined = details.find(item => item.id === (id))
   
   return (
     <View style={styles.container}>

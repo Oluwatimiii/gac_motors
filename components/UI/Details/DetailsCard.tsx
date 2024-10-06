@@ -6,7 +6,7 @@ import {
   View,
 } from "react-native";
 import React from "react";
-import { details, Details } from "@/data/data";
+import { Details } from "@/data/data";
 import { Href, useRouter } from "expo-router";
 import { responsiveWidth } from "react-native-responsive-dimensions";
 
@@ -16,20 +16,13 @@ interface DataProps {
 
 const DetailsCard: React.FC<DataProps> = ({ data }) => {
   const router = useRouter();
-  const handlePress = (id: number) => {
+  const handlePress = (id: string) => {
     router.push(`(authenticated)/vehicle/${id}` as Href);
   };
 
   return (
     <TouchableWithoutFeedback onPress={() => handlePress(data.id)}>
-      <View
-        style={[
-          styles.card,
-          data.id === Math.max(...details.map((item) => item.id)) && {
-            borderBottomWidth: 0.6,
-          },
-        ]}
-      >
+      <View style={styles.card}>
         {/* Text Column */}
         <View>
           <View>
@@ -37,7 +30,9 @@ const DetailsCard: React.FC<DataProps> = ({ data }) => {
             <Text style={styles.type}>{data.type}</Text>
           </View>
           <View style={styles.priceContainer}>
-            <Text style={styles.price}>&#8358;{data.price.toLocaleString()} only</Text>
+            <Text style={styles.price}>
+              &#8358;{data.price.toLocaleString()} only
+            </Text>
             <Text style={styles.discount}>10% Discount available</Text>
           </View>
         </View>
@@ -100,5 +95,5 @@ const styles = StyleSheet.create({
   imageBox: {
     width: responsiveWidth(40),
     maxHeight: 105,
-  }
+  },
 });

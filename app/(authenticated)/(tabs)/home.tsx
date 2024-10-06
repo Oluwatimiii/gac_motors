@@ -14,7 +14,7 @@ const Page = () => {
   const paddingTop = top > 0 ? top + 5 : 30;
  
   const user = useUserStore((state) => state.user)
-  console.log("current user from home", user)
+  //console.log("current user from home", user)
 
   return (
     <View style={{ flex: 1, paddingTop }}>
