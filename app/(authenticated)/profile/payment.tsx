@@ -26,7 +26,7 @@ const Page = () => {
         style={styles.container}
       >
         <View>
-          <Text>HELLO FROM PAYMENT</Text>
+          <Text style={styles.detailTitle}>Payment History</Text>
         </View>
       </ScrollView>
     </View>
@@ -40,5 +40,11 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: responsiveScreenWidth(5),
     backgroundColor: "white",
+  },
+  detailTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 10,
+    color: Colors.primary,
   },
 });

@@ -1,23 +1,23 @@
-import { Image, StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import React from "react";
-import { details, Details } from "@/data/data";
-import { responsiveHeight } from "react-native-responsive-dimensions";
-import { LinearGradient } from "expo-linear-gradient";
-import MainText from "../Custom/MainText";
-import Colors from "@/constants/Colors";
+import React from "react"
+import { Image, StyleSheet, Text, View, TouchableOpacity } from "react-native"
+import { details, Details } from "@/data/data"
+import { responsiveHeight } from "react-native-responsive-dimensions"
+import { LinearGradient } from "expo-linear-gradient"
+import MainText from "../Custom/MainText"
+import Colors from "@/constants/Colors"
 
 interface CustomDetailsBoxProps {
-  id: string;
+  id: string
+  onRentNow: () => void
 }
 
-const DetailsBox: React.FC<CustomDetailsBoxProps> = ({ id }) => {
+const DetailsBox: React.FC<CustomDetailsBoxProps> = ({ id, onRentNow }) => {
   const vehicleDetails: Details | undefined = details.find(
     (item) => item.id === id
-  );
+  )
 
   return (
     <View>
-      {/* Image */}
       <View style={styles.imageBox}>
         <Image
           source={vehicleDetails?.image}
@@ -26,7 +26,6 @@ const DetailsBox: React.FC<CustomDetailsBoxProps> = ({ id }) => {
         />
       </View>
 
-      {/* Vehicle Spec */}
       <LinearGradient
         colors={["#CC2936", "#66151B"]}
         start={{ x: 0, y: 0 }}
@@ -49,13 +48,13 @@ const DetailsBox: React.FC<CustomDetailsBoxProps> = ({ id }) => {
         </View>
       </LinearGradient>
 
-      {/* Car Info */}
-      <View style={{ marginTop: 20}}>
+      <View style={{ marginTop: 20 }}>
         <MainText text="Car Info" />
 
-        {/* Rent Box */}
         <View style={styles.rentBox}>
-          <Text style={styles.priceText}>&#8358;{vehicleDetails ? Math.floor(vehicleDetails.price / 7).toLocaleString() : 0}/day</Text>
+          <Text style={styles.priceText}>
+            ₦{vehicleDetails ? Math.floor(vehicleDetails.price / 7).toLocaleString() : 0}/day
+          </Text>
           
           <View style={styles.specGrid}>
             <View style={styles.specItem}>
@@ -72,16 +71,16 @@ const DetailsBox: React.FC<CustomDetailsBoxProps> = ({ id }) => {
             </View>
           </View>
           
-          <TouchableOpacity style={styles.rentButton}>
+          <TouchableOpacity style={styles.rentButton} onPress={onRentNow}>
             <Text style={styles.rentButtonText}>Rent Now</Text>
           </TouchableOpacity>
         </View>
       </View>   
     </View>
-  );
-};
+  )
+}
 
-export default DetailsBox;
+export default DetailsBox
 
 const styles = StyleSheet.create({
   carImage: {

@@ -5,13 +5,25 @@ export default function AuthenticatedLayout() {
     <Stack>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen 
-        name="vehicle/[id]"
+        name="vehicle"
         options={{ 
           headerShown: false
         }} 
       />
       <Stack.Screen 
         name="profile"
+        options={{ 
+          headerShown: false
+        }} 
+      />
+      <Stack.Screen 
+        name="history"
+        options={{ 
+          headerShown: false
+        }} 
+      />
+      <Stack.Screen 
+        name="home"
         options={{ 
           headerShown: false
         }} 

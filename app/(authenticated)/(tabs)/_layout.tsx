@@ -52,6 +52,15 @@ const Page = () => {
         }}
       />
       <Tabs.Screen
+        name="history"
+        options={{
+          title: "",
+          tabBarIcon: ({ size, color }) => (
+            <Ionicons name="time-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="profile"
         options={{
           title: "",

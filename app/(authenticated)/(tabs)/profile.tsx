@@ -129,8 +129,8 @@ const Page = () => {
           >
             <FontAwesome5 name="user-circle" size={18} color="black" />
             <View style={styles.linkTextBox}>
-              <Text style={styles.linkText}>Person Information</Text>
-              <Text style={styles.linkText1}>Click to edit</Text>
+              <Text style={styles.linkText}>Personal Information</Text>
+              <Text style={styles.linkText1}>Click to edit info</Text>
             </View>
           </TouchableOpacity>
 
@@ -138,7 +138,7 @@ const Page = () => {
           <View style={styles.linkItem}>
             <FontAwesome name="envelope-o" size={18} color="black" />
             <View style={styles.linkTextBox}>
-              <Text style={styles.linkText}>Email</Text>
+              <Text style={styles.linkText}>Email address</Text>
               <Text style={styles.linkText1}>{user?.email}</Text>
             </View>
           </View>
@@ -152,25 +152,12 @@ const Page = () => {
           >
             <FontAwesome name="address-book-o" size={18} color="black" />
             <View style={styles.linkTextBox}>
-              <Text style={styles.linkText}>Address</Text>
+              <Text style={styles.linkText}>Address/Location</Text>
               <Text style={styles.linkText1}>
                 {user?.address
                   ? user?.address
                   : "No address set yet. Click to set address"}
               </Text>
-            </View>
-          </TouchableOpacity>
-
-          {/* History link */}
-          <TouchableOpacity
-            style={styles.linkItem}
-            onPress={() =>
-              router.push("/(authenticated)/profile/history" as Href)
-            }
-          >
-            <MaterialIcons name="history" size={18} color="black" />
-            <View>
-              <Text style={styles.linkText}>History</Text>
             </View>
           </TouchableOpacity>
 
@@ -259,7 +246,7 @@ const styles = StyleSheet.create({
     padding: 6,
     borderRadius: 50,
     backgroundColor: "white",
-    shadowColor: Colors.lightGray,
+    shadowColor: Colors.gray,
     shadowOffset: {
       width: 0,
       height: 4,

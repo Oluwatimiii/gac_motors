@@ -5,6 +5,14 @@ export interface Car {
   image: any;
 }
 
+export interface Driver {
+  id: string;
+  name: string;
+  contact: number;
+  image: any;
+  sex: string
+}
+
 export interface Details {
   id: string;
   name: string;
@@ -36,6 +44,36 @@ export interface OnboardingType {
   color: string;
 }
 
+export const drivers: Driver[] = [
+  {
+    id: "drive_101",
+    name: "Bernando Silva",
+    contact: 2341234567890,
+    image: require("../assets/images/abesan.png"),
+    sex: "male",
+  },
+  {
+    id: "drive_102",
+    name: "Thomas Meunier",
+    contact: 2344294667890,
+    image: require("../assets/images/abesan1.png"),
+    sex: "male",
+  },
+  {
+    id: "drive_103",
+    name: "Marcus Thuram",
+    contact: 2349233567890,
+    image: require("../assets/images/abesan2.png"),
+    sex: "male",
+  },
+  {
+    id: "drive_104",
+    name: "Mary Dumebi",
+    contact: 2349243767890,
+    image: require("../assets/images/abesan3.jpg"),
+    sex: "female",
+  },
+];
 export const cars: Car[] = [
   {
     id: "gm8_101",
@@ -88,14 +126,14 @@ export const details: Details[] = [
       spec3: "0-60 mph",
       spec4: "22/28 mpg",
       spec5: "0-60 mph",
-      spec6: "22/28 mpg"
+      spec6: "22/28 mpg",
     },
     moreSpecs: {
       spec1: "7 passengers",
       spec2: "25.5 cubic feet",
       spec3: "5-star rating",
-      spec4: "12.3 vol"
-    }
+      spec4: "12.3 vol",
+    },
   },
   {
     id: "ga4_102",
@@ -116,8 +154,8 @@ export const details: Details[] = [
       spec1: "7 passengers",
       spec2: "25.5 cubic feet",
       spec3: "5-star rating",
-      spec4: "12.3 vol"
-    }
+      spec4: "12.3 vol",
+    },
   },
   {
     id: "gs4_103",
@@ -132,14 +170,14 @@ export const details: Details[] = [
       spec3: "0-60 mph",
       spec4: "22/28 mpg",
       spec5: "0-60 mph",
-      spec6: "22/28 mpg"
+      spec6: "22/28 mpg",
     },
     moreSpecs: {
       spec1: "7 passengers",
       spec2: "25.5 cubic feet",
       spec3: "5-star rating",
-      spec4: "12.3 vol"
-    }
+      spec4: "12.3 vol",
+    },
   },
   {
     id: "gs8_104",
@@ -154,14 +192,14 @@ export const details: Details[] = [
       spec3: "0-60 mph",
       spec4: "22/28 mpg",
       spec5: "0-60 mph",
-      spec6: "22/28 mpg"
+      spec6: "22/28 mpg",
     },
     moreSpecs: {
       spec1: "7 passengers",
       spec2: "25.5 cubic feet",
       spec3: "5-star rating",
-      spec4: "12.3 vol"
-    }
+      spec4: "12.3 vol",
+    },
   },
   {
     id: "gs8_105",
@@ -176,14 +214,14 @@ export const details: Details[] = [
       spec3: "0-60 mph",
       spec4: "22/28 mpg",
       spec5: "0-60 mph",
-      spec6: "22/28 mpg"
+      spec6: "22/28 mpg",
     },
     moreSpecs: {
       spec1: "7 passengers",
       spec2: "25.5 cubic feet",
       spec3: "5-star rating",
-      spec4: "12.3 vol"
-    }
+      spec4: "12.3 vol",
+    },
   },
   {
     id: "gaclof_106",
@@ -198,44 +236,44 @@ export const details: Details[] = [
       spec3: "0-60 mph",
       spec4: "22/28 mpg",
       spec5: "0-60 mph",
-      spec6: "22/28 mpg"
+      spec6: "22/28 mpg",
     },
     moreSpecs: {
       spec1: "7 passengers",
       spec2: "25.5 cubic feet",
       spec3: "5-star rating",
-      spec4: "12.3 vol"
-    }
+      spec4: "12.3 vol",
+    },
   },
 ];
 
-export const onboarding: OnboardingType[] =  [
+export const onboarding: OnboardingType[] = [
   {
-      id: 1,
-      title: "Premium All New GS8",
-      desc: "Rent the fancy wheels you've been eyeing",
-      image: require("../assets/images/gs8new.png"),
-      color: "#00616D"
+    id: 1,
+    title: "Premium All New GS8",
+    desc: "Rent the fancy wheels you've been eyeing",
+    image: require("../assets/images/gs8new.png"),
+    color: "#00616D",
   },
   {
-      id: 2,
-      title: "Durable GM8",
-      desc: "One glimpse of it is enough to impress",
-      image: require("../assets/images/gm8ivory.png"),
-      color: "#FFFFFF"
+    id: 2,
+    title: "Durable GM8",
+    desc: "One glimpse of it is enough to impress",
+    image: require("../assets/images/gm8ivory.png"),
+    color: "#FFFFFF",
   },
   {
-      id: 3,
-      title: "Luxury Car Rental",
-      desc: "Rent the fancy wheels you've been eyeing",
-      image: require("../assets/images/gs4gold.png"),
-      color: "#926600"
+    id: 3,
+    title: "Luxury Car Rental",
+    desc: "Rent the fancy wheels you've been eyeing",
+    image: require("../assets/images/gs4gold.png"),
+    color: "#926600",
   },
   {
-      id: 4,
-      title: "CNG Automated Vehicle",
-      desc: "Move with confidence on a budget",
-      image: require("../assets/images/ga4sedan.png"),
-      color: "#9B0913"
-  },   
-]
+    id: 4,
+    title: "CNG Automated Vehicle",
+    desc: "Move with confidence on a budget",
+    image: require("../assets/images/ga4sedan.png"),
+    color: "#9B0913",
+  },
+];

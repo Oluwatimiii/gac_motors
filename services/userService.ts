@@ -57,9 +57,9 @@ export const updateUserData = async (userId: string | undefined, data: any) => {
 // user image service
 export const getUserImageSrc = (imagePath: string | null): { uri: string } => {
   if (imagePath) {
-    return getSupabaseFileUrl(imagePath) || { uri: require("../assets/icons/userImg.png") }
+    return getSupabaseFileUrl(imagePath) || { uri: require("@/assets/icons/userImg.png") }
   } else {
-    return { uri: require("../assets/icons/userImg.png") }
+    return { uri: require("@/assets/icons/userImg.png") }
   }
 }
 
@@ -69,7 +69,7 @@ export const getSupabaseFileUrl = (filePath: string): { uri: string } => {
       uri: `${supabaseUrl}/storage/v1/object/public/uploads/${filePath}`
     }
   } else {
-    return { uri: '' }
+    return { uri: require("@/assets/icons/userImg.png") }
   }
 }
 

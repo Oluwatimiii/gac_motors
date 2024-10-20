@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    borderColor: Colors.primary,
+    borderColor: Colors.dark,
     borderWidth: 0.6,
     borderRadius: 9,
     paddingHorizontal: 10,
@@ -269,7 +269,7 @@ const styles = StyleSheet.create({
   },
   userNameText: {
     fontSize: 17,
-    color: Colors.primary,
+    color: "black",
     fontWeight: "400",
     marginTop: 20,
   },

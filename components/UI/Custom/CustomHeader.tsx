@@ -2,8 +2,12 @@ import Colors from "@/constants/Colors";
 import { View, StyleSheet, TouchableOpacity, Image } from "react-native";
 import {} from "react-native-gesture-handler";
 import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
+import { Href } from "expo-router";
 
 const CustomHeader = () => {
+  const router = useRouter()
+
   return (
       <View
         style={[
@@ -27,12 +31,12 @@ const CustomHeader = () => {
           <View style={styles.logoBox}>
             <Image
               style={styles.logoImage}
-              source={require("../../../assets/images/gaclogo.png")}
+              source={require("@/assets/images/gaclogo.png")}
             />
           </View>
 
           {/* Link to notify pages on homescreen */}
-          <TouchableOpacity onPress={() => {}}>
+          <TouchableOpacity onPress={() => router.push("/(authenticated)/home/notifications" as Href)}>
             <View style={styles.circle}>
               <Ionicons name="notifications-circle" size={26} color="white" />
             </View>

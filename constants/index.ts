@@ -1,3 +1,2 @@
 export const supabaseUrl = "https://iwyzsmmrjzkpyutlrqef.supabase.co";
-export const supabaseAnonKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml3eXpzbW1yanprcHl1dGxycWVmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQ5NTA4ODksImV4cCI6MjA0MDUyNjg4OX0.zJQboRJD1BXURnzNrZ_xO8F59eN_i-U0kFVR5cXznuA";
+export const supabaseAnonKey = `${process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY}`

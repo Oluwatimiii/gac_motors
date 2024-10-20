@@ -26,6 +26,7 @@ import {
 import { TextInput } from "react-native";
 import GradientButton from "@/components/UI/GradientBtn";
 import { Image } from "expo-image";
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 
 interface UserDetails {
   name: string;
@@ -130,13 +131,21 @@ const Page = () => {
       >
         {/* profile image and name */}
         <View style={styles.header}>
-          <Pressable onPress={handleImagePick} style={styles.imgContainer}>
-            <Image
-              style={styles.image}
-              source={imageSrc}
-              accessibilityLabel="New Profile Image"
-            />
-          </Pressable>
+          <View style={{ position: "relative" }}>
+            <Pressable onPress={handleImagePick} style={styles.imgContainer}>
+              <Image
+                style={styles.image}
+                source={imageSrc}
+                accessibilityLabel="New Profile Image"
+              />
+            </Pressable>
+            <Pressable
+              onPress={handleImagePick}
+              style={styles.editIconContainer}
+            >
+              <FontAwesome6 name="camera" size={17} color={Colors.primary} />
+            </Pressable>
+          </View>
           <Text style={styles.name}>{user?.name || "User Name"}</Text>
         </View>
 
@@ -219,11 +228,11 @@ const styles = StyleSheet.create({
   },
   viewSpace: {
     paddingVertical: 20,
-    width: "100%"
+    width: "100%",
   },
   userNameText: {
     fontSize: 17,
-    color: '#6A5ACD',
+    color: "#6A5ACD",
     fontWeight: "400",
     marginTop: 20,
   },
@@ -234,17 +243,27 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   imgContainer: {
-    height: 70,
-    width: 70,
-    borderRadius: 30,
-    borderColor: Colors.primary,
+    height: 85,
+    width: 85,
+    borderRadius: 35,
+    borderColor: "black",
     alignItems: "center",
     justifyContent: "center",
-    borderWidth: 0.3,
+    borderWidth: 0.8,
     overflow: "hidden",
   },
   image: {
     width: "100%",
     height: "100%",
+  },
+  editIconContainer: {
+    position: "absolute",
+    bottom: 0,
+    right: 0,
+    backgroundColor: "white",
+    borderColor: "green",
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 4,
   },
 });
