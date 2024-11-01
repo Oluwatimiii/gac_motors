@@ -23,8 +23,8 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "How do I book a ride?",
-    answer: "To book a ride, simply open the app, enter your destination, choose your preferred vehicle type, and confirm your booking. You'll receive a confirmation with your driver's details shortly after."
+    question: "How do I book a rental/ride?",
+    answer: "To book a rental, simply open the app, enter your location, choose your preferred vehicle type, and confirm your booking. If you decide to use our driver's services, you'll receive a confirmation with your driver's details shortly after."
   },
   {
     question: "What payment methods are accepted?",
@@ -35,12 +35,12 @@ const faqData: FAQItem[] = [
     answer: "Once your ride is confirmed, you can contact your driver through the app. Just tap on the 'Contact Driver' button in your ride details to call or message them directly."
   },
   {
-    question: "What if I need to cancel my ride?",
-    answer: "You can cancel your ride anytime before the driver arrives. However, cancellation fees may apply depending on how close to the pickup time you cancel. Check our cancellation policy for more details."
+    question: "What if I need to cancel my rental?",
+    answer: "You can cancel your rental anytime before the scheduled end date. However, cancellation fees may apply depending on how much time has been spent. Check our cancellation policy for more details."
   },
   {
     question: "Is it possible to schedule a ride in advance?",
-    answer: "Yes, you can schedule a ride up to 7 days in advance. Just select the 'Schedule' option when booking your ride and choose your preferred date and time."
+    answer: "Yes, you can schedule a ride up in advance. Just select the future date when booking your ride and choose your preferred date and time."
   },
   {
     question: "How do I report a lost item?",

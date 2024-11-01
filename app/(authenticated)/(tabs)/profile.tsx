@@ -39,7 +39,8 @@ const Page = () => {
   const router = useRouter();
   const { user, setUserData } = useUserStore();
   const [loadings, setLoadings] = useState(false);
-  const [displayLogoutModal, setDisplayLogoutModal] = useState(false);
+  const [displayLogoutModal, setDisplayLogoutModal] = useState(false)
+  const [deactivateModal, setDeactivateModal] = useState(false);
 
   const handleLogout = async () => {
     setLoadings(true);
@@ -106,6 +107,47 @@ const Page = () => {
           </View>
         </View>
       </Modal>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        presentationStyle="overFullScreen"
+        visible={deactivateModal}
+        onRequestClose={() => setDeactivateModal(false)}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text
+              style={[
+                styles.modalText,
+                { fontWeight: "bold", paddingHorizontal: responsiveWidth(13) },
+              ]}
+            >
+              Are you sure you want to permanently deactivate your account?.
+            </Text>
+
+            {loadings ? (
+              <View style={{ alignSelf: "center" }}>
+                <ActivityIndicator color={Colors.primary} />
+              </View>
+            ) : (
+              <View style={styles.viewss}>
+                <Pressable
+                  style={[styles.button, styles.buttonOpen]}
+                  onPress={() => setDeactivateModal(false)}
+                >
+                  <Text style={styles.textStyle}>CANCEL</Text>
+                </Pressable>
+                <TouchableOpacity
+                  style={[styles.button, styles.buttonClose]}
+                  onPress={handleLogout}
+                >
+                  <Text style={styles.textStyle}>LOGOUT</Text>
+                </TouchableOpacity>
+              </View>
+            )}
+          </View>
+        </View>
+      </Modal>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
@@ -130,7 +172,7 @@ const Page = () => {
             <FontAwesome5 name="user-circle" size={18} color="black" />
             <View style={styles.linkTextBox}>
               <Text style={styles.linkText}>Personal Information</Text>
-              <Text style={styles.linkText1}>Click to edit info</Text>
+              <Text style={styles.linkText1}>Click to edit profile information</Text>
             </View>
           </TouchableOpacity>
 
@@ -210,7 +252,7 @@ const Page = () => {
           </TouchableOpacity>
 
           {/* Deactivate link */}
-          <TouchableOpacity style={styles.linkItem}>
+          <TouchableOpacity style={styles.linkItem} onPress={() => setDisplayLogoutModal(true)}>
             <MaterialCommunityIcons name="cancel" size={18} color="red" />
             <View>
               <Text style={styles.linkText}>Deactivate account</Text>

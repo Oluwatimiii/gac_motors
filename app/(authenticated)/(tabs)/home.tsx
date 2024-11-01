@@ -8,13 +8,14 @@ import CustomHeader from "@/components/UI/Custom/CustomHeader";
 import Carousel from "@/components/UI/Home/Carousel";
 import { StatusBar } from "react-native";
 import { useUserStore } from "@/store/motorStore";
+import { Href, useRouter } from "expo-router";
 
 const Page = () => {
   const { top } = useSafeAreaInsets();
   const paddingTop = top > 0 ? top + 5 : 30;
  
   const user = useUserStore((state) => state.user)
-  //console.log("current user from home", user)
+  const router = useRouter()
 
   return (
     <View style={{ flex: 1, paddingTop }}>
@@ -39,7 +40,10 @@ const Page = () => {
               size={18}
               color={Colors.primary}
             />
-            <Text>{ user?.address ? user?.address : "No address set yet. Visit profile to set." }</Text>
+            
+            { user?.address && <Text>{user?.address}</Text> }
+            { !user?.address && <Text onPress={() => router.push("/(authenticated)/(tabs)/profile" as Href)}>No address set yet. Click here to set.</Text> }
+
           </View>
         </View>
 

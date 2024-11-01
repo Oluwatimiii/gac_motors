@@ -45,7 +45,7 @@ const Page = () => {
             }}
           >
             {/* Text*/}
-            <Text style={styles.headerText}>Choose Your location Today!</Text>
+            <Text style={styles.headerText}>Choose Your Luxury Today!</Text>
 
             {/* DETAILS CARD */}
             <ScrollView
